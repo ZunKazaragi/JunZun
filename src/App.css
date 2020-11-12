@@ -1,5 +1,17 @@
+body{
+  background-color: #bdbdbd;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .App {
   text-align: center;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .App-logo {
@@ -13,26 +25,249 @@
   }
 }
 
-.App-header {
+a {
+  text-decoration: none;
+}
+
+.page{
+  width: 50vw;
+  z-index: 3;
+}
+
+.banner-left, .banner-right{
+  z-index: 1;
+  width: 34vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.banner-left{
+  left: 0;
+  background-image: url(./banner-left.png);
+}
+.banner-right{
+  right: 0;
+  background-image: url(./banner-right.png);
+  order: 3;
+  background-position: right center;
+}
+
+.header {
   background-color: #282c34;
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.header .web-title{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 13vh;
   font-size: calc(10px + 2vmin);
-  color: white;
+  font-weight: bold;
 }
+.navigation-bar ul{
+  border-top: .3px solid white;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation-bar ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+.navigation-bar ul li a {
+  display: inline-block;
+  padding: .6em 1.4em;
+  color: white;
+  text-decoration: none;
+}
+
+.navigation-bar ul li a:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.banner {
+  position: relative;
+  height: 20vh;
+  border-top: 1px solid white;
+  background-color: #282c34;
+  overflow: hidden;
+}
+
+.banner-img{
+  height: 21vh;
+  width: 50vw;
+  object-fit: cover;
+  margin: 0;
+}
+
+.page-title {
+  background: rgba(0, 0, 0, .8);
+  color:white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(20px + 2vmin);
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+}
+
+.search-bar {
+  border-top: 1px solid white;
+  text-align: left;
+  background-color: #282c34;
+  padding: 10px;
+}
+
+input, button {
+  border-radius: 0;
+  border: none;
+  outline: none;
+}
+
+.zun-input {
+  padding: .6rem .4rem;
+}
+
+.zbtn {
+  padding: .6rem .8rem;
+  cursor: pointer;
+}
+
+.zbtn.btn-primary{
+  color:white;
+  background: rgb(57, 44, 88);
+}
+
+.zbtn.btn-primary:hover {
+  background: rgb(98, 76, 150);
+}
+
+
+.main-bar {
+  width: 70%;
+  min-height: 20vh;
+  background: #a2b2d3;
+  padding-bottom: 20px;
+}
+
+.lead-text {
+  margin: 6px;
+  font-weight: bold;
+}
+
+/* Article */
+.article-link{
+  background: white;
+  display:flex;
+}
+
+.article-thumbnail, .article-metadata {
+  margin: 5px;
+  text-align: left;
+  line-height: 1.4em;
+}
+
+
+.article-thumbnail img{
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+}
+
+.article-metadata .article-title {
+  font-weight: bold;
+  width: 20em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.article-metadata .article-date {
+  font-size: smaller;
+}
+
+.article-tags{width: 100%;}
+.article-tags ul {margin: 0;padding:0;}
+.article-tags ul li {display: inline-block;}
+.article-tags ul li a {
+  display: block; 
+  margin-right: 5px; 
+  padding: 3px 6px;
+  color: white; 
+  background-color: #d8a23d;
+  font-size: small;
+}
+.article-tags ul li a:hover {
+  background-color: #f5b847;
+}
+
+
+
+.side-bar {
+  min-height: 40vh;
+  background: #5e677a;
+  width: 30%;
+}
+
+.socialmedia-list{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.socialmedia-list li {
+  list-style-type: none;
+  display: block;
+}
+
+a.socialmedia-button {
+  display: block;
+  text-align: center;
+  width: 150px;
+  padding: 8px 6px;
+  margin: 3px;
+  color: white;
+  background: #282c34
+}
+
+.color-white{color:white}
+.text-left{text-align: left;}
+
+.about-page {
+  padding: 10px 20px;
+  text-align: left;
+}
+
+.about-page p {
+  text-align: justify;
+}
+
+a.socialmedia-button.fb {background-color: #031d52;}
+a.socialmedia-button.tw {background-color: #0c689e;}
+a.socialmedia-button.ig {background-color: #660546;}
+
+a.socialmedia-button.fb:hover {background-color: #123e96;}
+a.socialmedia-button.tw:hover {background-color: #1e8ccc;}
+a.socialmedia-button.ig:hover {background-color: #a31875;}
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
